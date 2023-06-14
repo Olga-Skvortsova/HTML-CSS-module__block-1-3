@@ -1,3 +1,154 @@
-* 
+*
   margin: 0
   padding: 0
+@font-face 
+    font-family: 'TT Lakes'
+    src: url('../fonts/TTLakes-Light.ttf')
+    font-weight: 300
+@font-face 
+    font-family: 'TT Lakes'
+    src: url('../fonts/TTLakes-Medium.ttf')
+    font-weight: 500
+@font-face 
+    font-family: 'TT Lakes'
+    src: url('../fonts/TTLakes-Bold.ttf')
+    font-weight: 700
+.container
+    max-width: 320px
+    margin: 0 auto
+.pink-circle
+    width: 40px
+    height: 40px
+    background: #FF3E79
+    border-radius: 20px
+.services-button
+    height: 40px
+    padding: 0 10px
+    background: #ffffff00
+    border: none
+    font-family: 'TT Lakes'
+    font-size: 16px
+    line-height: 24px
+    letter-spacing: -0.2px
+    color: #7E7E82
+    font-weight: 500
+.active
+    border: 2px solid #B8FFEC
+    border-radius: 6px
+    background: #FFFFFF
+.big-text
+    font-family: 'TT Lakes'
+    letter-spacing: 0.2px
+    color: #1B1C21
+    font-weight: 500
+.more
+    width: 24px
+    display: flex
+    justify-content: space-between
+    &__img
+        width: 24px
+        height: 24px
+        display: flex
+        align-items: center
+        justify-content: center
+    &__text
+        font-family: 'TT Lakes'
+        font-weight: 500
+        font-size: 16px
+        line-height: 24px
+        letter-spacing: -0.2px
+        color: #1B1C21
+.head
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: space-around
+    width: 100%
+    height: 88px
+    &__burger
+        display: flex
+        justify-content: center
+        align-items: center
+        div
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: flex-start
+            height: 16px
+            width: 18px
+            div
+                height: 2px
+                width: 10px
+                background: #FFFFFF
+                border-radius: 1px
+            div:last-child
+                width: 14px
+            div:first-child
+                width: 18px
+    &__logo
+        height: 50.81px
+        width: 96.55px
+    &__navigation
+        display: flex
+        align-items: center
+        justify-content: space-between
+        height: 40px
+        width: 118px
+        div
+            display: flex
+            align-items: center
+            justify-content: center
+        div:first-child
+            height: 32px
+            width: 2px
+            background: #EAEAEA
+            border-radius: 1px
+    &__shadow
+        position: absolute
+        top: 87px
+        height: 1px
+        width: 320px
+        background: #D9FFF5
+.services
+    position: fixed
+    top: 88px
+    width: 100%
+    height: 509px
+    padding-top: 24px
+    background: #F8F8F8
+    &__h1
+        display: flex
+        width: 100%
+        height: 40px
+        margin-bottom: 88px
+        div
+            border-radius: 0 90px 90px 0
+            height: 40px
+            width: 4px
+            background: #41F6D7
+            margin-right: 16px
+        h1
+            font-family: 'TT Lakes' 
+            font-size: 28px
+            line-height: 40px
+            letter-spacing: -0.6px
+            font-weight: 700
+    &__text
+        display: block
+        width: 288px
+        height: 90px
+        margin: 0 auto 16px auto
+        font-size: 14px
+        line-height: 18px
+    &__read-more
+        width: 132px
+        margin-left: 16px
+        margin-bottom: 16px
+.services-navigation
+    position: absolute
+    top: 176px
+    margin-left: 32px
+    display: flex
+    justify-content: space-between
+    width: 1158px
+    height: 40px
