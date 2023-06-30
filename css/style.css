@@ -31,6 +31,12 @@
   border-radius: 20px;
 }
 
+.pink-circle:hover {
+  filter: grayscale(20%);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
 .services-button {
   height: 40px;
   padding: 0 10px;
@@ -53,8 +59,18 @@
 .big-text {
   font-family: "TT Lakes";
   letter-spacing: 0.2px;
-  color: yellow;
+  color: #1B1C21;
   font-weight: 500;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.absolute-burger {
+  position: absolute;
+  top: 0.1px;
+  left: 10px;
 }
 
 .more {
@@ -77,12 +93,128 @@
   color: #1B1C21;
 }
 
+.menu {
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+  display: none;
+  width: 320px;
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  z-index: 2;
+  background: #FFFFFF;
+}
+.menu_active {
+  display: block;
+}
+.menu__search {
+  position: relative;
+  top: 23px;
+  left: 256px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu__elements {
+  width: 222px;
+  height: 420px;
+  position: relative;
+  top: 53px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.menu__element {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  margin-left: 24px;
+  font-family: "TT Lakes";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1B1C21;
+}
+.menu__element:hover {
+  color: #7E7E82;
+  cursor: pointer;
+}
+.menu__element:hover_active {
+  color: #7E7E82;
+  margin-left: 0;
+}
+.menu__blue-line-before-element {
+  border-radius: 0 90px 90px 0;
+  height: 32px;
+  width: 4px;
+  background: #41F6D7;
+  margin-right: 20px;
+}
+.menu__navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  top: 268px;
+  left: 24px;
+  width: 196px;
+  height: 124px;
+}
+.menu__navigation p {
+  font-family: "TT Lakes";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1B1C21;
+}
+.menu__navigation h4 {
+  font-family: "TT Lakes";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  color: #1B1C21;
+}
+.menu__nav-butons {
+  width: 152px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.menu__nav-butons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__language {
+  position: relative;
+  top: 328px;
+  left: 24px;
+  width: 87px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.menu__language p {
+  font-family: "TT Lakes";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1B1C21;
+}
+.menu__language p:hover {
+  color: #7E7E82;
+}
+
 header {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 header .head {
+  z-index: 3;
   position: fixed;
   display: flex;
   align-items: center;
@@ -112,11 +244,29 @@ header .head__burger div div {
   background: #FFFFFF;
   border-radius: 1px;
 }
-header .head__burger div div:last-child {
-  width: 14px;
-}
 header .head__burger div div:first-child {
   width: 18px;
+  transition: 0.5s;
+}
+header .head__burger div div:last-child {
+  width: 14px;
+  transition: 0.5s;
+}
+header .head__burger-line-change-1 {
+  position: relative;
+  transform: rotate(45deg);
+  top: 7px;
+  transition: 0.5s;
+}
+header .head__burger-line-change-2 {
+  visibility: hidden;
+}
+header .head__burger-line-change-3 {
+  position: relative;
+  transform: rotate(-45deg);
+  padding-left: 4px;
+  bottom: 7px;
+  transition: 0.5s;
 }
 header .head__logo {
   height: 50.81px;
