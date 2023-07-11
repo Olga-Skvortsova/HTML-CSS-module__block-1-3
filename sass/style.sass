@@ -1,15 +1,15 @@
 *
     margin: 0
     padding: 0
-@font-face
+@font-face 
     font-family: 'TT Lakes'
     src: url('../fonts/TTLakes-Light.ttf')
     font-weight: 300
-@font-face
+@font-face 
     font-family: 'TT Lakes'
     src: url('../fonts/TTLakes-Medium.ttf')
     font-weight: 500
-@font-face
+@font-face 
     font-family: 'TT Lakes'
     src: url('../fonts/TTLakes-Bold.ttf')
     font-weight: 700
@@ -21,6 +21,10 @@
     height: 40px
     background: #FF3E79
     border-radius: 20px
+.pink-circle:hover
+    filter: grayscale(20%)
+    cursor: pointer
+    transition: 0.5s
 .services-button
     height: 40px
     padding: 0 10px
@@ -41,6 +45,12 @@
     letter-spacing: 0.2px
     color: #1B1C21
     font-weight: 500
+.hidden
+    visibility: hidden
+.absolute-burger
+    position: absolute
+    top: 0.1px
+    left: 10px
 .more
     display: flex
     justify-content: flex-start
@@ -57,11 +67,110 @@
         line-height: 24px
         letter-spacing: -0.2px
         color: #1B1C21
+.menu
+    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.20), -2px 0px 4px 0px rgba(69, 79, 126, 0.02)
+    display: none
+    width: 320px
+    height: 100%
+    left: 0px
+    position: absolute
+    z-index: 2
+    background: #FFFFFF
+    &_active
+        display: block
+    &__search
+        position: relative
+        top: 23px
+        left: 256px
+        display: flex
+        align-items: center
+        justify-content: center
+    &__elements
+        width: 222px
+        height: 420px
+        position: relative
+        top: 53px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+    &__element
+        display: flex
+        align-items: center
+        height: 32px
+        margin-left: 24px
+        font-family: 'TT Lakes'
+        font-weight: 500
+        font-size: 16px
+        line-height: 24px
+        letter-spacing: -0.2px
+        color: #1B1C21
+    &__element:hover
+        color: #7E7E82
+        cursor: pointer
+        &_active
+            color: #7E7E82
+            margin-left: 0
+    &__blue-line-before-element
+        border-radius: 0 90px 90px 0
+        height: 32px
+        width: 4px
+        background: #41F6D7
+        margin-right: 20px
+    &__navigation
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        position: relative
+        top: 268px
+        left: 24px
+        width: 196px
+        height: 124px
+        p
+            font-family: 'TT Lakes'
+            font-weight: 500
+            font-size: 16px
+            line-height: 24px
+            letter-spacing: -0.2px
+            color: #1B1C21
+        h4
+            font-family: 'TT Lakes'
+            font-weight: 700
+            font-size: 24px
+            line-height: 32px
+            letter-spacing: -0.6px
+            color: #1B1C21
+    &__nav-butons
+        width: 152px
+        height: 40px
+        display: flex
+        justify-content: space-between
+        div
+            display: flex
+            justify-content: center
+            align-items: center
+    &__language
+        position: relative
+        top: 328px
+        left: 24px
+        width: 87px
+        height: 24px
+        display: flex
+        justify-content: space-between
+        p
+            font-family: 'TT Lakes'
+            font-weight: 500
+            font-size: 16px
+            line-height: 24px
+            letter-spacing: -0.2px
+            color: #1B1C21
+        p:hover
+            color: #7E7E82
 header
     display: flex
     justify-content: center
     width: 100%
     .head
+        z-index: 3
         position: fixed
         display: flex
         align-items: center
@@ -86,10 +195,25 @@ header
                     width: 10px
                     background: #FFFFFF
                     border-radius: 1px
-                div:last-child
-                    width: 14px
                 div:first-child
                     width: 18px
+                    transition: 0.5s
+                div:last-child
+                    width: 14px
+                    transition: 0.5s
+        &__burger-line-change-1
+            position: relative
+            transform: rotate(45deg)
+            top: 7px
+            transition: 0.5s
+        &__burger-line-change-2
+            visibility: hidden
+        &__burger-line-change-3
+            position: relative
+            transform: rotate(-45deg)
+            padding-left: 4px
+            bottom: 7px
+            transition: 0.5s
         &__logo
             height: 50.81px
             width: 96.55px
@@ -301,4 +425,3 @@ header
         height: 82x
         display: block
         margin-left: 5%
-    
