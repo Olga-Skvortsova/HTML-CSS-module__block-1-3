@@ -19,6 +19,10 @@
   src: url("../fonts/TTLakes-Bold.ttf");
   font-weight: 700;
 }
+body {
+  overflow-x: hidden;
+}
+
 .container {
   max-width: 320px;
   margin: 0 auto;
@@ -50,6 +54,17 @@
   font-weight: 500;
 }
 
+.light-header {
+  color: #7E7E82;
+  font-family: TT Lakes;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+}
+
 .active {
   border: 2px solid #B8FFEC;
   border-radius: 6px;
@@ -63,8 +78,54 @@
   font-weight: 500;
 }
 
+.button-with-red-arrow {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #FF3E79;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.button-with-red-arrow__arrow1 {
+  width: 8px;
+  height: 2px;
+  background: #FF3E79;
+  transform: rotate(45deg);
+  margin-bottom: 3px;
+  border-radius: 90px;
+}
+.button-with-red-arrow__arrow2 {
+  width: 8px;
+  height: 2px;
+  background: #FF3E79;
+  transform: rotate(-45deg);
+  border-radius: 90px;
+}
+
+.button-with-red-arrow:hover {
+  filter: grayscale(20%);
+  cursor: pointer;
+}
+.button-with-red-arrow:hover__arrow1 {
+  filter: grayscale(20%);
+}
+.button-with-red-arrow:hover__arrow2 {
+  filter: grayscale(20%);
+}
+
+.flexdisplay {
+  display: flex !important;
+}
+
 .hidden {
   visibility: hidden;
+}
+
+.displaynone {
+  display: none;
 }
 
 .absolute-burger {
@@ -97,7 +158,7 @@
   box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
   display: none;
   width: 320px;
-  height: 100%;
+  height: 1024px;
   left: 0px;
   position: absolute;
   z-index: 2;
@@ -215,12 +276,13 @@ header {
 }
 header .head {
   z-index: 3;
-  position: fixed;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   height: 88px;
+  border-bottom: 1px solid #D9FFF5;
 }
 header .head__line-in-nav {
   display: none;
@@ -299,23 +361,16 @@ header .head__line-in-nav {
   background: #EAEAEA;
   border-radius: 1px;
 }
-header .head__shadow {
-  position: absolute;
-  top: 87px;
-  height: 1px;
-  width: 320px;
-  background: #D9FFF5;
-}
 
 .section1-background {
   background: #F8F8F8;
   width: 100%;
-  height: 509px;
-  position: fixed;
-  top: 88px;
+  position: relative;
+  border-bottom: 1px solid #D9FFF5;
 }
 
 .services {
+  height: 498px;
   padding-top: 24px;
 }
 .services__h1 {
@@ -371,6 +426,100 @@ header .head__shadow {
 .services__photo {
   width: 320px;
   height: 176px;
+}
+
+.brands-title-background {
+  background: linear-gradient(270deg, #F8F8F8 0%, #FFF 100%);
+  width: 100%;
+  position: relative;
+}
+.brands-title-background .brands-title {
+  height: 80px;
+  width: 288px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper {
+  background: #F8F8F8;
+  width: 100%;
+}
+.swiper .swiper-container {
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: all 0.5s ease;
+}
+.swiper .swiper-container .swiper-wrapper {
+  width: 2320px;
+  height: 72px;
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  transition: all 0.5s ease;
+}
+.swiper .swiper-container .swiper-wrapper .swiper-slide {
+  background: #FFF;
+  width: 240px;
+  height: 72px;
+  border-radius: 6px;
+  border: 1px solid #EAEAEA;
+  box-sizing: border-box;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(10) {
+  display: none;
+}
+.swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(11) {
+  display: none;
+}
+.swiper .swiper-container .swiper-pagination .swiper-pagination-bullet {
+  background: #DDDDDD;
+  width: 12px;
+  height: 12px;
+  border-radius: 90px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.swiper .swiper-container .swiper-pagination .swiper-pagination-bullet:hover {
+  background: #B5B6BC;
+}
+.swiper .swiper-container .swiper-readmore {
+  transition: all 0.5s ease;
+}
+.swiper .swiper-container .swiper-readmore__text-after {
+  display: none;
+  font-family: "TT Lakes";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1B1C21;
+}
+.swiper .swiper-container .swiper-readmore:hover {
+  cursor: pointer;
+}
+.swiper .swiper-container .swiper-readmore:hover .more__img {
+  filter: grayscale(30%);
+  transition: all 0.5s ease;
+}
+
+.swiper-сontainer-height-more {
+  height: 354px !important;
+}
+
+.swiper-wrapper-height-more {
+  height: 232px !important;
+}
+
+.imgtransform {
+  transform: rotate(180deg);
 }
 
 .services-navigation {
@@ -434,6 +583,43 @@ header .head__shadow {
   .services__text::after {
     white-space: pre;
     content: "\a\aМы успешно работаем с 1992 года и \aзаслужили репутацию надежного партнера.";
+  }
+  .brands-title-background .brands-title {
+    height: 56px;
+    width: 380px;
+    margin: auto 0 auto 24px;
+  }
+  .swiper .swiper-container {
+    height: 266px;
+    width: 720px;
+    margin: auto;
+  }
+  .swiper .swiper-container .swiper-wrapper {
+    width: 720px;
+    height: 160px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .swiper .swiper-container .swiper-wrapper .swiper-slide {
+    width: 224px;
+    margin-right: 24px;
+  }
+  .swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(3) {
+    margin-right: 0;
+  }
+  .swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(6) {
+    margin-right: 0;
+  }
+  .swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(7) {
+    display: none;
+  }
+  .swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(8) {
+    display: none;
+  }
+  .swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(9) {
+    display: none;
   }
 }
 @media (min-width: 1120px) {
@@ -529,6 +715,39 @@ header .head__shadow {
   .services__photo {
     width: 532px;
     height: 307px;
+  }
+  .brands-title-background .brands-title {
+    height: 56px;
+    width: 380px;
+    margin: auto 0 auto 24px;
+  }
+  .swiper .swiper-container {
+    height: 266px;
+    width: 1056px;
+    margin: auto;
+  }
+  .swiper .swiper-container .swiper-wrapper {
+    width: 1056px;
+    height: 160px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .swiper .swiper-container .swiper-wrapper .swiper-slide {
+    margin-right: 32px;
+  }
+  .swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(4) {
+    margin-right: 0;
+  }
+  .swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(8) {
+    margin-right: 0;
+  }
+  .swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(9) {
+    display: none;
+  }
+  .swiper .swiper-container .swiper-readmore {
+    margin-bottom: 34px;
   }
   .services-navigation {
     top: 90px;

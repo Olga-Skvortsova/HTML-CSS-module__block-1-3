@@ -13,6 +13,10 @@
     font-family: 'TT Lakes'
     src: url('../fonts/TTLakes-Bold.ttf')
     font-weight: 700
+
+
+body
+    overflow-x: hidden
 .container
     max-width: 320px
     margin: 0 auto
@@ -36,6 +40,15 @@
     letter-spacing: -0.2px
     color: #7E7E82
     font-weight: 500
+.light-header
+    color: #7E7E82
+    font-family: TT Lakes
+    font-size: 16px
+    font-style: normal
+    font-weight: 400
+    line-height: 24px
+    letter-spacing: -0.2px
+    text-transform: uppercase
 .active
     border: 2px solid #B8FFEC
     border-radius: 6px
@@ -45,8 +58,43 @@
     letter-spacing: 0.2px
     color: #1B1C21
     font-weight: 500
+.button-with-red-arrow
+    width: 40px
+    height: 40px
+    border: 2px solid #FF3E79
+    background: #ffffff00
+    border-radius: 90px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    &__arrow1
+        width: 8px
+        height: 2px
+        background: #FF3E79
+        transform: rotate(45deg)
+        margin-bottom: 3px
+        border-radius: 90px
+    &__arrow2
+        width: 8px
+        height: 2px
+        background: #FF3E79
+        transform: rotate(-45deg)
+        border-radius: 90px
+.button-with-red-arrow:hover
+    filter: grayscale(20%)
+    cursor: pointer
+    &__arrow1
+        filter: grayscale(20%)
+    &__arrow2
+        filter: grayscale(20%)
+
+.flexdisplay
+    display: flex !important
 .hidden
     visibility: hidden
+.displaynone
+    display: none
 .absolute-burger
     position: absolute
     top: 0.1px
@@ -67,11 +115,13 @@
         line-height: 24px
         letter-spacing: -0.2px
         color: #1B1C21
+
+
 .menu
     box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.20), -2px 0px 4px 0px rgba(69, 79, 126, 0.02)
     display: none
     width: 320px
-    height: 100%
+    height: 1024px
     left: 0px
     position: absolute
     z-index: 2
@@ -165,18 +215,21 @@
             color: #1B1C21
         p:hover
             color: #7E7E82
+
+
 header
     display: flex
     justify-content: center
     width: 100%
     .head
         z-index: 3
-        position: fixed
+        position: relative
         display: flex
         align-items: center
         justify-content: space-around
         width: 100%
         height: 88px
+        border-bottom: 1px solid #D9FFF5
         &__line-in-nav
             display: none
         &__burger
@@ -238,19 +291,15 @@ header
             width: 2px
             background: #EAEAEA
             border-radius: 1px
-        &__shadow
-            position: absolute
-            top: 87px
-            height: 1px
-            width: 320px
-            background: #D9FFF5
+
+
 .section1-background
     background: #F8F8F8
     width: 100%
-    height: 509px
-    position: fixed
-    top: 88px
+    position: relative
+    border-bottom: 1px solid #D9FFF5
 .services
+    height: 498px
     padding-top: 24px
     &__h1
         display: flex
@@ -297,6 +346,84 @@ header
     &__photo
         width: 320px
         height: 176px
+
+
+.brands-title-background
+    background: linear-gradient(270deg, #F8F8F8 0%, #FFF 100%)
+    width: 100%
+    position: relative
+    .brands-title
+        height: 80px
+        width: 288px
+        margin: 0 auto
+        display: flex
+        justify-content: center
+        align-items: center
+
+.swiper
+    background: #F8F8F8
+    width: 100%
+    .swiper-container
+        height: 140px
+        display: flex
+        flex-direction: column
+        min-width: 0
+        transition: all 0.5s ease
+        .swiper-wrapper
+            width: 2320px
+            height: 72px
+            display: flex
+            margin-top: 16px
+            margin-bottom: 16px
+            transition: all 0.5s ease
+            .swiper-slide
+                background: #FFF
+                width: 240px
+                height: 72px
+                border-radius: 6px
+                border: 1px solid #EAEAEA
+                box-sizing: border-box
+                padding: 0 16px
+                display: flex
+                justify-content: space-between
+                align-items: center
+            .swiper-slide:nth-child(10)
+                display: none
+            .swiper-slide:nth-child(11)
+                display: none
+        .swiper-pagination
+            .swiper-pagination-bullet
+                background: #DDDDDD
+                width: 12px
+                height: 12px
+                border-radius: 90px
+                cursor: pointer
+                transition: all 0.5s ease
+            .swiper-pagination-bullet:hover
+                background: #B5B6BC
+        .swiper-readmore
+            transition: all 0.5s ease
+            &__text-after
+                display: none
+                font-family: 'TT Lakes'
+                font-weight: 500
+                font-size: 16px
+                line-height: 24px
+                letter-spacing: -0.2px
+                color: #1B1C21
+        .swiper-readmore:hover
+            cursor: pointer
+            .more__img
+                filter: grayscale(30%)
+                transition: all 0.5s ease
+.swiper-сontainer-height-more
+    height: 354px !important
+.swiper-wrapper-height-more
+    height: 232px !important
+.imgtransform
+    transform: rotate(180deg)
+
+
 .services-navigation
     position: absolute
     top: 176px
@@ -305,9 +432,12 @@ header
     justify-content: space-between
     width: 1158px
     height: 40px
+
+
 @media (min-width: 768px) and (max-width: 1119px)
     .container
         max-width: 768px
+
     header
         .head
             justify-content: center
@@ -329,6 +459,8 @@ header
                     padding-top: 5px
                 div:nth-child(3)
                     display: flex
+
+
     .section1-background
         height: 416px
     .services
@@ -345,11 +477,48 @@ header
         &__text::after
             white-space: pre
             content: "\0a \0a Мы успешно работаем с 1992 года и \0a заслужили репутацию надежного партнера."
+
+
+    .brands-title-background
+        .brands-title
+            height: 56px
+            width: 380px
+            margin: auto 0 auto 24px
+    .swiper
+        .swiper-container
+            height: 266px
+            width: 720px
+            margin: auto
+            .swiper-wrapper
+                width: 720px
+                height: 160px
+                display: flex
+                flex-wrap: wrap
+                margin-top: 24px
+                margin-bottom: 24px
+                .swiper-slide
+                    width: 224px
+                    margin-right: 24px
+                .swiper-slide:nth-child(3)
+                    margin-right: 0
+                .swiper-slide:nth-child(6)
+                    margin-right: 0
+                .swiper-slide:nth-child(7)
+                    display: none
+                .swiper-slide:nth-child(8)
+                    display: none
+                .swiper-slide:nth-child(9)
+                    display: none
+
+
+
 @media (min-width: 1120px)
     .container
         max-width: 1120px
+
     header
         display: none
+
     .section1-background
         top: 0
         height: 535px
@@ -419,6 +588,38 @@ header
         &__photo
             width: 532px
             height: 307px
+
+
+    .brands-title-background
+        .brands-title
+            height: 56px
+            width: 380px
+            margin: auto 0 auto 24px
+    .swiper
+        .swiper-container
+            height: 266px
+            width: 1056px
+            margin: auto
+            .swiper-wrapper
+                width: 1056px
+                height: 160px
+                display: flex
+                flex-wrap: wrap
+                margin-top: 24px
+                margin-bottom: 24px
+                .swiper-slide
+                    margin-right: 32px
+                .swiper-slide:nth-child(4)
+                    margin-right: 0
+                .swiper-slide:nth-child(8)
+                    margin-right: 0
+                .swiper-slide:nth-child(9)
+                    display: none
+            .swiper-readmore
+                margin-bottom: 34px
+
+
+
     .services-navigation
         top: 90px
         width: 1063px
