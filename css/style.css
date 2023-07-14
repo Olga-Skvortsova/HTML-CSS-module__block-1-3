@@ -491,6 +491,7 @@ header .head__line-in-nav {
   background: #B5B6BC;
 }
 .swiper .swiper-container .swiper-readmore {
+  display: none;
   transition: all 0.5s ease;
 }
 .swiper .swiper-container .swiper-readmore__text-after {
@@ -621,6 +622,9 @@ header .head__line-in-nav {
   .swiper .swiper-container .swiper-wrapper .swiper-slide:nth-child(9) {
     display: none;
   }
+  .swiper .swiper-container .swiper-readmore {
+    display: flex;
+  }
 }
 @media (min-width: 1120px) {
   .container {
@@ -747,6 +751,7 @@ header .head__line-in-nav {
     display: none;
   }
   .swiper .swiper-container .swiper-readmore {
+    display: flex;
     margin-bottom: 34px;
   }
   .services-navigation {
